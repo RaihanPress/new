@@ -1,0 +1,39 @@
+@media (max-width: 850px){
+    .ijlas h1 {
+        font-size: 6vw;
+    }
+    .ijlas h2 {
+        font-size: 4vw;
+    }
+    .ijlas h2 div.date-picker{
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 940px){
+    .eng_title h1{
+        font-size: 28px;
+    }
+    .eng_title h2{
+        font-size: 20px;
+    }
+    .nav .urdu_title{
+        width: 60%;
+    }
+    .urdu_title h1{
+        font-size: 40px;
+    }
+    .urdu_title h2{
+        font-size: 30px;
+    }
+}
+
+
+@media (max-width: 740px){
+    .sadarat .w50c{
+        height: auto;
+        flex-direction: column;
+    }
+}

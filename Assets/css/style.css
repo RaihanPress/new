@@ -1,0 +1,319 @@
+* {
+    font-family: 'Segoe UI', sans-serif;
+    user-select: none;
+}
+img {
+    pointer-events: none;
+}
+body{
+    background: rgb(0, 102, 255);
+}
+.section{
+    position: relative;
+    min-height: 100vh;
+    padding-top: 150px;
+}
+
+.nav {
+    width: 100%;
+    height: 150px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    background: #fff2;
+    transition: .5s;
+}
+
+
+.nav [class$="_title"] {
+    width: 100%;
+    padding: 15px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.logo img {
+    height: 100px;
+    filter: drop-shadow(0 0 5px #fff);
+    transition: .5s;
+}
+
+.urdu_title * {
+    font-family: 'Jameel Noori Nastaleeq';
+}
+
+.urdu_title h1 {
+    font-size: 50px;
+    line-height: 35px;
+}
+
+.urdu_title h2 {
+    font-size: 30px;
+    line-height: 50px;
+}
+
+.urdu_title p {
+    font-size: 20px;
+    line-height: 50px;
+}
+
+
+.nav.sticky{
+    height: 110px;
+    background: #fff;
+    box-shadow: 0 2px 5px #000;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
+
+.nav.sticky .eng_title{
+    width: auto;
+}
+.nav.sticky *{
+    color: rgb(0, 103, 172);
+}
+
+.nav.sticky .logo img{
+    height: 80px;
+}
+.nav.sticky .urdu_title{
+    display: none;
+}
+
+
+
+
+
+
+.ijlas {
+    position: relative;
+    padding-top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 120vh;
+    background: linear-gradient(rgb(75, 141, 132), rgb(58, 42, 117));
+    clip-path: polygon(0 0, 100% 0%, 100% 90%, 50% 100%, 0 90%);
+    transition: 0.5s;
+}
+
+.ijlas.normal{
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%, 0 100%)
+}
+.ijlas .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120vh;
+    background: url('../img/madrasa_back.jpg') 0 0/ cover fixed;
+    z-index: 0;
+    mix-blend-mode: multiply;
+    opacity: .5;
+}
+
+.ijlas img {
+    filter: invert(1) brightness(1000) drop-shadow(9px 10px 6px black);
+    width: 70%;
+    z-index: 1;
+}
+.ijlas h1{
+    font-size: 50px;
+    color: #fff;
+    z-index: 1;
+}
+.ijlas h2{
+    font-size: 40px;
+    color: #fff;
+    z-index: 1;
+    display: flex;
+    align-items: baseline;
+}
+.ijlas h2 span{
+    font-size: 25px;
+}
+.ijlas h2 div.date-picker{
+    max-width: 40px;
+    overflow: hidden;
+}
+.ijlas h2 div.date-picker input[type="date"]{
+    width: 46px;
+    background: #0000;
+    color: #0000;
+    filter: invert(1);
+    transform: scale(2) translate(-14px,-5px);
+}
+
+.arrow{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    /* margin-top: 15px; */
+    transform: rotate(45deg);
+}
+.arrow::after,
+.arrow::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #0000;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    animation: arrow 1s linear infinite;
+}
+
+.arrow::before{
+    animation-delay: -.3s;
+}
+@keyframes arrow{
+    from{
+        opacity: 0;
+        transform: translate(-25px,-25px);
+    }
+    50%{
+        opacity: 1;
+    }
+    to{
+        transform: translate(25px,25px);
+        opacity: 0;
+    }
+}
+
+.sadarat{
+    background: linear-gradient(rgb(0, 102, 255),rgb(0, 29, 75));
+}
+.sadarat .back{
+    position: absolute;
+}
+
+.sadarat .w50c{
+    display: flex;
+    width: 100%;
+    height: 70vh;
+}
+.sadarat .w50c .w50{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+.sadarat .w50c .w50 .wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff2;
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    box-shadow: 0 15px 15px #27272769;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.sadarat .w50c .w50 .wrapper .title{
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+.sadarat .w50c .w50 .wrapper .contents{
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: inset 2px 2px 5px #000;
+}
+.sadarat .w50c .w50 .wrapper .contents::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 7px;
+    background: #f8f8f8;
+    animation: slide2 12s ease infinite;
+}
+@keyframes slide2{
+    from,60%{
+        transform: translateX(0);
+    }
+    40%{
+        transform: translateX(100%);
+    }
+}
+.sadarat .w50c .w50 .wrapper .contents .slide{
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    animation: slide 6s ease infinite alternate;
+}
+@keyframes slide{
+    from,71%{
+        transform: translateX(0);
+    }
+    75%,to{
+        transform: translateX(-100%);
+    }
+}
+.sadarat .w50c .w50 .wrapper .contents .slide h1{
+    font-size: 2.7vw;
+    color: red;
+}
+.sadarat .w50c .w50 .wrapper .contents .slide h4{
+    font-size: 2vw;
+    color: rgb(12, 143, 0);
+}
+.sadarat .w50c .w50 .wrapper .contents .slide p{
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
+.sadarat .w50c .w50 .wrapper .contents .slide .photo{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 2px 1px #000;
+}
+.sadarat .w50c .w50 .wrapper .contents .slide .photo img{
+    height: 180px;
+}
+
+
+
+
+
+#mehman{
+    min-height: auto;
+    height: 70vh;
+}
+
+
+
+#footer{
+    background: #303030;
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#footer a button{
+    padding: 2px 7px;
+    margin-left: 8px;
+    background: #000;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 15px;
+}
